@@ -5,8 +5,8 @@ CREATE DATABASE images;
 
 CREATE TABLE IF NOT EXISTS carousel(
   id SERIAL PRIMARY KEY,
-  imageUrl TEXT,
-  houseID INT NOT NULL
+  street VARCHAR(80),
+  imageUrl TEXT
 );
 
-\COPY images FROM 'database/NoSQL/imagesfile.tsv' DELIMITER '\t';
+\COPY carousel FROM 'database/SQL/streetsImagesFile.tsv' DELIMITER E'\t';
