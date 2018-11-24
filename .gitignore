@@ -6,3 +6,5 @@ client/dist/bundle.js
 idStreetNames.tsv
 imagesfile.tsv
 streetsImagesFile.tsv
+file.tsv
+client/dist/bundle.js

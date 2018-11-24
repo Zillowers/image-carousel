@@ -34,9 +34,11 @@ class App extends React.Component {
 
   componentDidMount() {
     // path = listings/images/:houseID'
-    console.log( 'App.jsx line 37', `${window.location.pathname}images`)
-    fetch(`${window.location.pathname}images`)
-      
+    // console.log( 'App.jsx line 37', `${window.location.pathname}images`)
+    // fetch('/images/:houseID')
+    const id = window.location.pathname.split('/')[2];
+    console.log('This is the', id);
+    fetch(`/images/${id}`)
       .then(response => response.json())
       .then((data) => {
         this.setState({

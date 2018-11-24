@@ -10,4 +10,5 @@ CREATE TABLE IF NOT EXISTS images.carousel(
   imageUrl text
 );
 
-COPY images.carousel FROM '/Users/Phantogram/HRSF104/sdc/image-carousel/database/SQL/streetsImagesFile.tsv' WITH DELIMITER = '\t' AND HEADER = TRUE;
+COPY images.carousel (id, street, imageUrl) FROM '/Users/Phantogram/HRSF104/sdc/image-carousel/database/SQL/streetsImagesFile.tsv' WITH DELIMITER = '\t' AND HEADER = TRUE;
+

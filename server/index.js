@@ -1,19 +1,17 @@
 const express = require('express');
-
 const app = express();
 const port = 3003;
 const path = require('path');
 const bodyParser = require('body-parser');
-
 const dbIndex = require('../database/index.js');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, '../client/dist')));
+app.use('/home/:id', express.static(path.join(__dirname, '../client/dist')));
 
 app.get('/images/:houseID', (req, res) => {
   const id = req.params.houseID;
-  dbIndex.getAllImages(5, (err, results) => {
+  dbIndex.getAllImages(id, (err, results) => {
     if (err) {
       res.status(500).send(err);
     } else {
