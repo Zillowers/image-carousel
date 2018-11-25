@@ -2,7 +2,7 @@ const { Client } = require('pg');
 const client = new Client({
   user: 'Phantogram',
   host: 'localhost',
-  database: 'test',
+  database: 'images',
   port: 5432,
 });
 
