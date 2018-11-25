@@ -11,11 +11,11 @@ const fakeDataGenerator = (i) => {
     'https://s3-us-west-1.amazonaws.com/zillowhouses/interior+houseonthecliff.jpg',
     'https://s3-us-west-1.amazonaws.com/zillowhouses/interior-malibu-home.jpg'];
 
-  for (; i <= 10; i++) {
+  for (; i <= 10000000; i++) {
     let randomNum = randomNumGenerator(0, 4);
     let houseID = randomNumGenerator(1, 100000);
     const imageUrl = homeUrls[randomNum];
-    if (!wstream.write( i + '\t' + imageUrl + '\t' + houseID + '\n')) {
+    if (!wstream.write(imageUrl + '\t' + houseID + '\n')) {
       wstream.once('drain', () => {
         fakeDataGenerator(i + 1);
       });

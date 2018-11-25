@@ -5,8 +5,9 @@ CREATE DATABASE images;
 
 CREATE TABLE IF NOT EXISTS carousel (
   id SERIAL PRIMARY KEY,
+  streetName TEXT,
   imageUrl TEXT,
   houseID INT
 );
 
-\COPY carousel FROM '/Users/Phantogram/HRSF104/sdc/image-carousel/database/images2.tsv' DELIMITER E'\t';
+\COPY carousel FROM '/Users/Phantogram/HRSF104/sdc/image-carousel/database/combo.tsv' DELIMITER E'\t';
