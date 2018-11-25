@@ -1,6 +1,6 @@
 const faker = require('faker');
 const fs = require('fs');
-const wstream = fs.createWriteStream('./../file.tsv');
+const wstream = fs.createWriteStream('./../images2.tsv');
 
 const randomNumGenerator = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
@@ -11,11 +11,11 @@ const fakeDataGenerator = (i) => {
     'https://s3-us-west-1.amazonaws.com/zillowhouses/interior+houseonthecliff.jpg',
     'https://s3-us-west-1.amazonaws.com/zillowhouses/interior-malibu-home.jpg'];
 
-  for (; i <= 10000000; i++) {
+  for (; i <= 10; i++) {
     let randomNum = randomNumGenerator(0, 4);
     let houseID = randomNumGenerator(1, 100000);
     const imageUrl = homeUrls[randomNum];
-    if (!wstream.write(imageUrl + '\t' + houseID + '\n')) {
+    if (!wstream.write( i + '\t' + imageUrl + '\t' + houseID + '\n')) {
       wstream.once('drain', () => {
         fakeDataGenerator(i + 1);
       });
