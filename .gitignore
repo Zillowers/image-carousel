@@ -12,4 +12,5 @@ database/SQL/newFile.tsv
 database/SQL/import_images_carousel.err.20181119_150259
 client/dist/bundle.js
 database/testfile.tsv
-../images2.tsv
+database/images2.tsv
+database/combo.tsv
