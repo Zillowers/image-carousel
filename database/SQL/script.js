@@ -1,6 +1,6 @@
 const faker = require('faker');
 const fs = require('fs');
-const wstream = fs.createWriteStream('./../file.tsv');
+const wstream = fs.createWriteStream('./../images2.tsv');
 
 const randomNumGenerator = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 

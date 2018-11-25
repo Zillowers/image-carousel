@@ -3,10 +3,11 @@ CREATE DATABASE images;
 
 \c images;
 
-CREATE TABLE IF NOT EXISTS carousel(
+CREATE TABLE IF NOT EXISTS carousel (
   id SERIAL PRIMARY KEY,
-  street VARCHAR(80),
-  imageUrl TEXT
+  streetName TEXT,
+  imageUrl TEXT,
+  houseID INT
 );
 
-\COPY carousel FROM 'database/SQL/streetsImagesFile.tsv' DELIMITER E'\t';
+\COPY carousel FROM '/Users/Phantogram/HRSF104/sdc/image-carousel/database/combo.tsv' DELIMITER E'\t';

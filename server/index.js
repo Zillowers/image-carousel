@@ -11,6 +11,7 @@ app.use('/home/:id', express.static(path.join(__dirname, '../client/dist')));
 
 app.get('/images/:houseID', (req, res) => {
   const id = req.params.houseID;
+  console.log('server/index.js line 14 id:', id);
   dbIndex.getAllImages(id, (err, results) => {
     if (err) {
       res.status(500).send(err);
