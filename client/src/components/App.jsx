@@ -33,14 +33,13 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    // path = listings/images/:houseID'
-    // console.log( 'App.jsx line 37', `${window.location.pathname}images`)
-    // fetch('/images/:houseID')
-      const id = window.location.pathname.split('/')[2];
-    console.log('This is the App.jsx line 40', id);
-    fetch(`/images/${id}`)
+    const path = window.location.pathname.split('/');
+    const id = path[path.length - 2];
+    console.log(id);
+    fetch(`/homes/${id}/images`)
       .then(response => response.json())
       .then((data) => {
+        console.log(data);
         this.setState({
           images: data,
         });
@@ -52,7 +51,7 @@ class App extends React.Component {
     if (this.state.toggle) { 
       this.setState({
         currentIndex: this.state.currentIndex - 1,
-        image: this.state.images[this.state.currentIndex - 1].imageUrl,
+        image: this.state.images[this.state.currentIndex - 1].imageurl,
       });
     } else if (this.state.toggle === false && (stringPxToNum(this.state.viewStyle.right) > 0)) {
       this.setState({
@@ -68,7 +67,7 @@ class App extends React.Component {
     if (this.state.toggle) {
       this.setState({
         currentIndex: Number(this.state.currentIndex) + 1,
-        image: this.state.images[Number(this.state.currentIndex) + 1].imageUrl,
+        image: this.state.images[Number(this.state.currentIndex) + 1].imageurl,
       });
     } else if (this.state.toggle === false && (stringPxToNum(this.state.viewStyle.right) < 1373)) { 
       this.setState({
