@@ -9,13 +9,10 @@ const client = new Client({
 client.connect();
 
 const getAllImages = (houseID, callback) => {
-  client.query(`SELECT * FROM carousel WHERE houseID = ${houseID} LIMIT ${houseID}`, (err, results) => {
-    console.log('What is going on?', houseID);
+  client.query(`SELECT * FROM carousel WHERE houseID = ${houseID} LIMIT 4`, (err, results) => {
     if (err) {
-      console.log('database/index.js line 13 query err:', err);
       callback(err);
     } else {
-      console.log('database/index.js line 13 query results:', results.rows);
       callback(null, results.rows);
     }
   });
