@@ -11,7 +11,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/homes/:id', express.static(path.join(__dirname, '../client/dist')));
 
 app.get('/homes/:id/images', (req, res) => {
-  const { id } = req.params;
+
+  const randomNumGenerator = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+  let { id } = req.params;
+  if ( id > 100000 ) {
+    id = randomNumGenerator(1, 100000);
+  }
   dbIndex.getAllImages(id, (err, results) => {
     if (err) {
       res.status(500).send(err);

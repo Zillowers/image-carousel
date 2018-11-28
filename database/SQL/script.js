@@ -13,7 +13,7 @@ const fakeDataGenerator = (i) => {
 
   for (; i <= 10000000; i++) {
     let randomNum = randomNumGenerator(0, 4);
-    let houseID = randomNumGenerator(1, 100000);
+    let houseID = randomNumGenerator(1, 10000000);
     const imageUrl = homeUrls[randomNum];
     if (!wstream.write(imageUrl + '\t' + houseID + '\n')) {
       wstream.once('drain', () => {
