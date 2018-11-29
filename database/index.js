@@ -1,8 +1,9 @@
 const { Client } = require('pg');
 const client = new Client({
-  user: 'Phantogram',
-  host: 'localhost',
+  user: 'postgres',
+  host: 'ec2-3-16-187-141.us-east-2.compute.amazonaws.com',
   database: 'images',
+  password: 'sdcpsql',
   port: 5432,
 });
 
