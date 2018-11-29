@@ -19,3 +19,4 @@ database/combo.tsv
 newrelic.js
 stressTest.yml
 stressTestScript.js
+database/SQL/myimages.sql
