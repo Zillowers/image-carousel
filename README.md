@@ -1,6 +1,6 @@
 # Zillower Image Carousel
 
-> Image Carousel similar to Zillow's
+> Image Carousel similar to Zillow's. Client-Side Code: Michelle Lee, Server-Side Code: Andrew Johnson
 
 ## Related Projects
 
